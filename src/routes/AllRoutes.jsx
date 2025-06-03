@@ -10,10 +10,10 @@ const AllRoutes = () => {
                 <Route path="movies/popular"  element={<MovieList       title="Popular Movies"             apiPath="movie/popular" />} />
                 <Route path="movies/top"      element={<MovieList       title="Top Movies"                 apiPath="movie/top_rated" />} />
                 <Route path="movies/upcoming" element={<MovieList       title="Upcoming movies"            apiPath="movie/upcoming"/>}  />
-                {/* <Route path="*"               element={<PageNotFound title="please try again later"        apiPath="" />} /> */}
+                <Route path="*"               element={<PageNotFound title="page not found"        apiPath="" />} />
 
                 <Route path="movie/:id" element={<MovieDetails/>} />
-                <Rooute path="search" element={<Search apiPath="search/movie"/>}/>
+                <Route path="search" element={<Search apiPath="search/movie"/>}/>
         </Routes>
     </>
   )

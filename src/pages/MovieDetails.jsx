@@ -86,10 +86,10 @@ export const MovieDetails = () => {
             </tbody>
           </table>
           <a className='btn btn-warning'
-  href={`https://www.imdb.com/title/${movie.imdb_id}`} 
+  href={`https://www.imdb.com/title/${movie.imdb_id}/`} 
   target="_blank" 
   rel="noopener noreferrer"
->
+>{" "}
   View on IMDb
 </a>
 

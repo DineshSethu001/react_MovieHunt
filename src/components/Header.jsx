@@ -1,7 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 export const Header = () => {
+ const navigator = useNavigate()
+  const handleSearch = (e)=>{
+    e.preventDefault();
+    const queryTerm = e.target.search.value;
+    e.target.reset();
+    return navigator(`/search?q=${queryTerm}`)
+
+  }
   return (
     <div className='navbar navbar-expand-md fixed-top navbar-dark bg-primary'>
           <div className="container-fluid">
@@ -33,8 +41,8 @@ export const Header = () => {
                       Upcoming
                       </NavLink></li>
                 </ul>
-                <form action="#">
-                  <input type="search" className='form-control' placeholder='Search Here'/>
+                <form onSubmit={handleSearch}>
+                  <input type="search" name="search" className='form-control' placeholder='Search Here'/>
                 </form>
               </div>
               
