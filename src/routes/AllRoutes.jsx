@@ -6,12 +6,14 @@ const AllRoutes = () => {
   return (
     <>
         <Routes>
-                <Route path="/"               element={<MovieList       title="Your Guide to Great Movies"/>}/>
-                <Route path="movies/popular"  element={<MovieList       title="Popular Movies" />} />
-                <Route path="movies/top"      element={<MovieList       title="Top Movies" />} />
-                <Route path="movies/upcoming" element={<MovieList       title="Upcoming movies"/>}/>
-                <Route path="*"               element={<PageNotFound/>} title="please try again later" />
+                <Route path="/"               element={<MovieList       title="Your Guide to Great Movies" apiPath="movie/now_playing" />} />
+                <Route path="movies/popular"  element={<MovieList       title="Popular Movies"             apiPath="movie/popular" />} />
+                <Route path="movies/top"      element={<MovieList       title="Top Movies"                 apiPath="movie/top_rated" />} />
+                <Route path="movies/upcoming" element={<MovieList       title="Upcoming movies"            apiPath="movie/upcoming"/>}  />
+                {/* <Route path="*"               element={<PageNotFound title="please try again later"        apiPath="" />} /> */}
 
+                <Route path="movie/:id" element={<MovieDetails/>} />
+                <Rooute path="search" element={<Search apiPath="search/movie"/>}/>
         </Routes>
     </>
   )
